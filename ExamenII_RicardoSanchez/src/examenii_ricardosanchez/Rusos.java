@@ -1,5 +1,9 @@
 package examenii_ricardosanchez;
-public class Rusos {
+
+import java.io.Serializable;
+
+public class Rusos implements Serializable{
+    private static final long SerialVersionUID = 555L;
     String Nombre;
     String ID;
     int edad;
@@ -10,7 +14,6 @@ public class Rusos {
 
     public Rusos() {
     }
-
     public Rusos(String Nombre, String ID, int edad, String Rango, int resistencia, String TipoDArma, int Poder) {
         this.Nombre = Nombre;
         this.ID = ID;
@@ -20,51 +23,39 @@ public class Rusos {
         this.TipoDArma = TipoDArma;
         this.Poder = Poder;
     }
-
     public String getNombre() {
         return Nombre;
     }
-
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
-
     public String getID() {
         return ID;
     }
-
     public void setID(String ID) {
         this.ID = ID;
     }
-
     public int getEdad() {
         return edad;
     }
-
     public void setEdad(int edad) {
         this.edad = edad;
     }
-
     public String getRango() {
         return Rango;
     }
-
     public void setRango(String Rango) {
         this.Rango = Rango;
     }
-
     public int getResistencia() {
         return resistencia;
     }
-
     public void setResistencia(int resistencia) {
         this.resistencia = resistencia;
     }
-
     public String getTipoDArma() {
         return TipoDArma;
     }
-
     public void setTipoDArma(String TipoDArma) {
         this.TipoDArma = TipoDArma;
     }
