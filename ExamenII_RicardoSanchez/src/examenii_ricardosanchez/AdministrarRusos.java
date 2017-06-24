@@ -24,7 +24,10 @@ public class AdministrarRusos {
     }
     public void setEjercitoR(ArrayList<Rusos> EjercitoR) {
         this.EjercitoR = EjercitoR;
-    }  
+    }
+    public void AgregarR(Rusos R){
+        this.EjercitoR.add(R);
+    }
     public void escribitArchivo() {
         FileOutputStream fw = null;
         ObjectOutputStream bw = null;

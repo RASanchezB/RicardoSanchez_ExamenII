@@ -51,6 +51,13 @@ public class Alemanes implements Serializable{
     public void setTipoDArma(String TipoDArma) {
         this.TipoDArma = TipoDArma;
     }
+    public int getPoder() {
+        return Poder;
+    }
+    public void setPoder(int Poder) {
+        this.Poder = Poder;
+    }
+    
     @Override
     public String toString() {
         return Alias;

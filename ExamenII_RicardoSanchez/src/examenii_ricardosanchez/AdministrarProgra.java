@@ -25,6 +25,9 @@ public class AdministrarProgra {
     public void setEjercitoP(ArrayList<AlumnosD_Progra> EjercitoP) {
         this.EjercitoP = EjercitoP;
     }
+    public void AgregarP(AlumnosD_Progra P){
+        this.EjercitoP.add(P);
+    }
     public void escribitArchivo() {
         FileOutputStream fw = null;
         ObjectOutputStream bw = null;
@@ -65,4 +68,9 @@ public class AdministrarProgra {
             e.printStackTrace();
         }
     }
+    @Override
+    public String toString() {
+        return "AdministrarProgra{" + "archivo=" + archivo + ", EjercitoP=" + EjercitoP + '}';
+    }
+    
 }

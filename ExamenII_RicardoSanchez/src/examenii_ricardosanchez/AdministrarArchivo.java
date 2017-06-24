@@ -25,6 +25,9 @@ public class AdministrarArchivo {
     public void setEjercitoA(ArrayList<Alemanes> EjercitoA) {
         this.EjercitoA = EjercitoA;
     }
+    public void AgregarA(Alemanes A){
+        this.EjercitoA.add(A);
+    }
     public void escribitArchivo() {
         FileOutputStream fw = null;
         ObjectOutputStream bw = null;

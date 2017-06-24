@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.MutableTreeNode;
 
 public class Principal extends javax.swing.JFrame {
 
@@ -18,6 +19,9 @@ public class Principal extends javax.swing.JFrame {
         bg_ArmasA = new javax.swing.ButtonGroup();
         bg_ArmasR = new javax.swing.ButtonGroup();
         bg_ArmasP = new javax.swing.ButtonGroup();
+        pm_MenuT = new javax.swing.JPopupMenu();
+        mi_Mod = new javax.swing.JMenuItem();
+        mi_Elim = new javax.swing.JMenuItem();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -69,6 +73,23 @@ public class Principal extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+
+        mi_Mod.setText("Modificar");
+        mi_Mod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_ModActionPerformed(evt);
+            }
+        });
+        pm_MenuT.add(mi_Mod);
+
+        mi_Elim.setText("Eliminar");
+        mi_Elim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_ElimActionPerformed(evt);
+            }
+        });
+        pm_MenuT.add(mi_Elim);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ejercito");
@@ -89,7 +110,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel13.setText("Tipo de arma:");
 
         bg_ArmasR.add(AR_1);
-        AR_1.setSelected(true);
         AR_1.setText("AK - 47");
 
         bg_ArmasR.add(AR_2);
@@ -138,7 +158,7 @@ public class Principal extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AR_2)
                             .addComponent(AR_3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 223, Short.MAX_VALUE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(22, 22, 22))))
         );
@@ -242,7 +262,7 @@ public class Principal extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AP_3)
                             .addComponent(AP_2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(23, 23, 23))))
         );
@@ -327,7 +347,7 @@ public class Principal extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(AA_1)
                                     .addComponent(jLabel1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 217, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(AA_3)
@@ -419,7 +439,10 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setText("Lista:");
+        jLabel6.setText("JTree:");
+
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel12.setText("Para cargar los soldados desde binario");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -437,7 +460,8 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -445,15 +469,18 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton7)
-                        .addGap(192, 192, 192)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel12)
+                        .addGap(172, 172, 172)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -465,14 +492,14 @@ public class Principal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -505,8 +532,14 @@ public class Principal extends javax.swing.JFrame {
             EjercitoR.add(r);
             JOptionPane.showMessageDialog(AP_1, "Soldado Guardado");
             AdministrarRusos AR = new AdministrarRusos("./EjercitoRuso.rsb");
-            AR.getEjercitoR().add(r);
+            AR.cargarArchivo();
+            AR.AgregarR(r);
             AR.escribitArchivo();
+            //Limpiar texto
+            tf_NombreR.setText("");
+            tf_IdR.setText("");
+            tf_EdadR.setText("");
+            tf_RangoR.setText("");
         }
 
 
@@ -537,8 +570,14 @@ public class Principal extends javax.swing.JFrame {
             EjercitoP.add(p);
             JOptionPane.showMessageDialog(AP_1, "Soldado Guardado");
             AdministrarProgra AP = new AdministrarProgra("./EjercitoProgra.rsb");
-            AP.getEjercitoP().add(p);
+            AP.cargarArchivo();
+            AP.AgregarP(p);
             AP.escribitArchivo();
+            //Limpiar TextField
+            tf_ApodoP.setText("");
+            tf_NumCuentaP.setText("");
+            tf_EdadP.setText("");
+            tf_GradoAcademicoP.setText("");
         }
 
     }//GEN-LAST:event_jButton3MouseClicked
@@ -567,14 +606,23 @@ public class Principal extends javax.swing.JFrame {
             EjercitoA.add(a);
             JOptionPane.showMessageDialog(AP_1, "Soldado Guardado");
             AdministrarArchivo AA = new AdministrarArchivo("./EjercitoAlemanes.rsb");
-            AA.getEjercitoA().add(a);
+            AA.cargarArchivo();
+            AA.AgregarA(a);
             AA.escribitArchivo();
+            //Limpiar TextField
+            tf_AliasA.setText("");
+            tf_EdadA.setText("");
+            tf_CastaA.setText("");
+            
+            
         }
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jt_EjercitosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_EjercitosMouseClicked
         if (evt.isMetaDown()) {
-
+            pm_MenuT.pack();
+            pm_MenuT.show(jt_Ejercitos, evt.getX(), evt.getY());
+            pm_MenuT.setVisible(true);
         }
     }//GEN-LAST:event_jt_EjercitosMouseClicked
 
@@ -596,14 +644,112 @@ public class Principal extends javax.swing.JFrame {
         DefaultMutableTreeNode Rusos = new DefaultMutableTreeNode("Soldados Rusos");
         DefaultMutableTreeNode Alemanes = new DefaultMutableTreeNode("Soldados Alemanes");
         DefaultMutableTreeNode Progra = new DefaultMutableTreeNode("Soldados Programacion");
-        //
+        //Meter todos los soldados en el tree
         for (int i = 0; i < AR.getEjercitoR().size(); i++) {
             DefaultMutableTreeNode SR = new DefaultMutableTreeNode(AR.getEjercitoR().get(i));
             Rusos.add(SR);
             raiz.add(Rusos);
         }
-        
+        for (int i = 0; i < AA.getEjercitoA().size(); i++) {
+            DefaultMutableTreeNode SA = new DefaultMutableTreeNode(AA.getEjercitoA().get(i));
+            Alemanes.add(SA);
+            raiz.add(Alemanes);
+        }
+        for (int i = 0; i < AP.getEjercitoP().size(); i++) {
+            DefaultMutableTreeNode SP = new DefaultMutableTreeNode(AP.getEjercitoP().get(i));
+            Progra.add(SP);
+            raiz.add(Progra);
+        }
+        modelo.reload();
     }//GEN-LAST:event_jButton7MouseClicked
+
+    private void mi_ModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_ModActionPerformed
+        DefaultTreeModel modelo = (DefaultTreeModel)jt_Ejercitos.getModel();
+        MutableTreeNode raiz = (MutableTreeNode)modelo.getRoot();
+        DefaultMutableTreeNode nodo = (DefaultMutableTreeNode) jt_Ejercitos.getSelectionPath().getLastPathComponent();
+        Object objeto=nodo.getUserObject();
+        if (objeto instanceof Rusos) {
+            String ModN = JOptionPane.showInputDialog("Ingrese el nuevo nombre");
+            String ModI = JOptionPane.showInputDialog("Ingrese la nueva identidad");
+            int ModE = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva edad"));
+            String ModR = JOptionPane.showInputDialog("Ingrese rango");
+            int ModRe = ModE * 8;
+            int ModTA = Integer.parseInt(JOptionPane.showInputDialog("Elija un arma: "
+                    + "\n1) AK-47"
+                    + "\n2) Revolver"
+                    + "\n3) RPG-7"));
+            String ModArma = null;
+            int ModP = 0;
+            if(ModTA == 1){
+                ModArma = "AK-47";
+                ModP = 27;
+            }else if(ModTA == 2){
+                ModArma = "Revolver Navant";
+                ModP = 13;
+            }else{
+                ModArma = "RPG-7";
+                ModP = 57;
+            }
+            ((Rusos) objeto).setNombre(ModN);
+            ((Rusos) objeto).setID(ModI);
+            ((Rusos) objeto).setEdad(ModE);
+            ((Rusos) objeto).setRango(ModR);
+            ((Rusos) objeto).setResistencia(ModRe);
+            ((Rusos) objeto).setTipoDArma(ModArma);
+            ((Rusos) objeto).setPoder(ModP);
+            
+            
+            
+        }
+        if (objeto instanceof Alemanes) {
+            String ModA = JOptionPane.showInputDialog("Ingrese Alias");
+            int ModE =  Integer.parseInt(JOptionPane.showInputDialog("Ingrese edad"));
+            String ModC = JOptionPane.showInputDialog("Ingrese casta");
+            int ModTDA = Integer.parseInt("Tipo de arma:"
+                    + "\n1)Subfusil MP-40"
+                    + "\n2)Pistola Walther"
+                    + "\n3)Ametralladora MG42");
+            String ModArma = null;
+            int ModP = 0;
+            if(ModTDA == 1){
+                ModArma = "Subfusil MP-40";
+                ModP = 25;
+            }else if(ModTDA == 2){
+                ModArma = "Pistola Walther";
+                ModP = 32;
+            }else{
+                ModArma = "Ametralladora MG42";
+                ModP = 11;
+            }
+            ((Alemanes) objeto).setAlias(ModA);
+            ((Alemanes) objeto).setEdad(ModE);
+            ((Alemanes) objeto).setCasta(ModC);
+            ((Alemanes) objeto).setTipoDArma(ModArma);
+            ((Alemanes) objeto).setPoder(ModP);
+            
+        }
+        if (objeto instanceof AlumnosD_Progra) {
+            
+        }
+                
+    }//GEN-LAST:event_mi_ModActionPerformed
+
+    private void mi_ElimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_ElimActionPerformed
+        DefaultTreeModel modelo = (DefaultTreeModel)jt_Ejercitos.getModel();
+        MutableTreeNode raiz = (MutableTreeNode)modelo.getRoot();
+        DefaultMutableTreeNode nodo = (DefaultMutableTreeNode) jt_Ejercitos.getSelectionPath().getLastPathComponent();
+        Object objeto=nodo.getUserObject();
+        if (objeto instanceof Rusos) {
+            EjercitoR.remove((Rusos)objeto);
+        }
+        if (objeto instanceof Alemanes) {
+            EjercitoA.remove((Alemanes)objeto);
+        }
+        if (objeto instanceof AlumnosD_Progra) {
+            EjercitoP.remove((AlumnosD_Progra)objeto);
+        }
+        
+    }//GEN-LAST:event_mi_ElimActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -658,6 +804,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -681,6 +828,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTree jt_Ejercitos;
+    private javax.swing.JMenuItem mi_Elim;
+    private javax.swing.JMenuItem mi_Mod;
+    private javax.swing.JPopupMenu pm_MenuT;
     private javax.swing.JTextField tf_AliasA;
     private javax.swing.JTextField tf_ApodoP;
     private javax.swing.JTextField tf_CastaA;
