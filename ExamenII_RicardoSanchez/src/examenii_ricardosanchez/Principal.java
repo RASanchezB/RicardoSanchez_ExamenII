@@ -504,7 +504,6 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         String NombreR = tf_NombreR.getText();
         String IdR = tf_IdR.getText();
@@ -544,7 +543,6 @@ public class Principal extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jButton2MouseClicked
-
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         String ApodoP = tf_ApodoP.getText();
         String NumCuentaP = tf_NumCuentaP.getText();
@@ -581,7 +579,6 @@ public class Principal extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jButton3MouseClicked
-
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         String AliasA = tf_AliasA.getText();
         int EdadA = Integer.parseInt(tf_EdadA.getText());
@@ -617,7 +614,6 @@ public class Principal extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_jButton1MouseClicked
-
     private void jt_EjercitosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_EjercitosMouseClicked
         if (evt.isMetaDown()) {
             pm_MenuT.pack();
@@ -625,7 +621,6 @@ public class Principal extends javax.swing.JFrame {
             pm_MenuT.setVisible(true);
         }
     }//GEN-LAST:event_jt_EjercitosMouseClicked
-
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
         DefaultTreeModel modelo = (DefaultTreeModel) jt_Ejercitos.getModel();
         DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
@@ -662,7 +657,6 @@ public class Principal extends javax.swing.JFrame {
         }
         modelo.reload();
     }//GEN-LAST:event_jButton7MouseClicked
-
     private void mi_ModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_ModActionPerformed
         DefaultTreeModel modelo = (DefaultTreeModel)jt_Ejercitos.getModel();
         MutableTreeNode raiz = (MutableTreeNode)modelo.getRoot();
@@ -729,11 +723,36 @@ public class Principal extends javax.swing.JFrame {
             
         }
         if (objeto instanceof AlumnosD_Progra) {
+            String ModAp = JOptionPane.showInputDialog("Ingrese el apodo");
+            String ModNum = JOptionPane.showInputDialog("Ingrese su numero de cuenta");
+            int ModE = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la edad"));
+            String ModGA = JOptionPane.showInputDialog("Ingrese su grado academico");
+            int ModTA = Integer.parseInt(JOptionPane.showInputDialog("Tipo de arma:"
+                    + "\n1)Disco duro"
+                    + "\n2Controles de wii)"
+                    + "\n3)Laptops"));
+            String ModArma = null;
+            int ModP = 0;
+            if(ModTA == 1){
+                ModArma = "Disco duro";
+                ModP = 23;
+            }else if(ModTA == 2){
+                ModArma = "Controles de wii";
+                ModP = 47;
+            }else{
+                ModArma = "Laptops";
+                ModP = 76;
+            }
+            ((AlumnosD_Progra) objeto).setApodo(ModAp);
+            ((AlumnosD_Progra) objeto).setEdad(ModE);
+            ((AlumnosD_Progra) objeto).setNumCuenta(ModNum);
+            ((AlumnosD_Progra) objeto).setGradoAcademico(ModGA);
+            ((AlumnosD_Progra) objeto).setTipoDArma(ModArma);
+            ((AlumnosD_Progra) objeto).setPoder(ModP);
             
         }
                 
     }//GEN-LAST:event_mi_ModActionPerformed
-
     private void mi_ElimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_ElimActionPerformed
         DefaultTreeModel modelo = (DefaultTreeModel)jt_Ejercitos.getModel();
         MutableTreeNode raiz = (MutableTreeNode)modelo.getRoot();

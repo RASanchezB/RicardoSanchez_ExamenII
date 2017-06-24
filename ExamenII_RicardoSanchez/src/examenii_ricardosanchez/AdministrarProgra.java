@@ -68,6 +68,7 @@ public class AdministrarProgra {
             e.printStackTrace();
         }
     }
+    
     @Override
     public String toString() {
         return "AdministrarProgra{" + "archivo=" + archivo + ", EjercitoP=" + EjercitoP + '}';

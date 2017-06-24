@@ -59,7 +59,13 @@ public class AlumnosD_Progra implements Serializable{
     public void setGradoAcademico(String GradoAcademico) {
         this.GradoAcademico = GradoAcademico;
     }
-
+    public int getPoder() {
+        return Poder;
+    }
+    public void setPoder(int Poder) {
+        this.Poder = Poder;
+    }
+    
     @Override
     public String toString() {
         return Apodo;

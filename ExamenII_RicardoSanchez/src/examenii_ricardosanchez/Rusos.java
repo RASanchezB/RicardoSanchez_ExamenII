@@ -59,14 +59,18 @@ public class Rusos implements Serializable{
     public void setTipoDArma(String TipoDArma) {
         this.TipoDArma = TipoDArma;
     }
-
+    public int getPoder() {
+        return Poder;
+    }
+    public void setPoder(int Poder) {
+        this.Poder = Poder;
+    }
+    
     @Override
     public String toString() {
         return Nombre;
     }
 
-    void setPoder(int ModP) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     
 }
