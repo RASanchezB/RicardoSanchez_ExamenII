@@ -431,6 +431,11 @@ public class Principal extends javax.swing.JFrame {
 
         jButton6.setFont(new java.awt.Font("Showcard Gothic", 3, 14)); // NOI18N
         jButton6.setText("FIGHT");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
 
         jButton7.setText("Actualizar");
         jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -769,6 +774,19 @@ public class Principal extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_mi_ElimActionPerformed
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        AdministrarRusos AR = new AdministrarRusos("./EjercitoRuso.rsb");
+        AdministrarArchivo AA = new AdministrarArchivo("./EjercitoAlemanes.rsb") ;
+        AdministrarProgra AP = new AdministrarProgra("./EjercitoProgra.rsb");
+        //Cargar los soldados
+        AR.cargarArchivo();
+        AA.cargarArchivo();
+        AP.cargarArchivo();
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton6MouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
